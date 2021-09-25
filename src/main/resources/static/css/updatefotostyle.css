@@ -1,0 +1,76 @@
+#file {
+   width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.disk {
+    position:relative;
+    width: 30%;
+    padding-top:5%;
+    border-radius: 100%;
+    /* background: #4a9266;
+     width: 30%;
+     padding: 15% 0;
+     border-radius: 50%;   адаптивный круг */
+    margin: 5% auto;
+    font-size: 25px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    color:green;
+    text-shadow: 2px 2px #ff0000;
+    /*font: 4.5vmin monospace;*/
+}
+
+.disk b {
+    position: absolute;
+    left: 50%;
+    width: 0;
+}
+
+.disk b:nth-of-type(-n+6) {
+    bottom: 50%;
+    -ms-transform-origin: 0% 100%;
+    -webkit-transform-origin: 0% 100%; transform-origin: 0% 100%;
+    padding-bottom: 50%;
+}
+
+disk b:nth-of-type(1) {-ms-transform: rotate(1deg); -webkit-transform: rotate(1deg); transform: rotate(1deg);}
+.disk b:nth-of-type(2) {-ms-transform: rotate(11deg); -webkit-transform: rotate(11deg); transform: rotate(11deg);}
+.disk b:nth-of-type(3) {-ms-transform: rotate(21deg); -webkit-transform: rotate(21deg); transform: rotate(21deg);}
+.disk b:nth-of-type(4) {-ms-transform: rotate(31deg); -webkit-transform: rotate(31deg); transform: rotate(31deg);}
+.disk b:nth-of-type(5) {-ms-transform: rotate(41deg); -webkit-transform: rotate(41deg); transform: rotate(41deg);}
+.disk b:nth-of-type(6) {-ms-transform: rotate(51deg); -webkit-transform: rotate(51deg); transform: rotate(51deg);}
+
+.buttn{
+    text-decoration:none;
+    text-align:center;
+    padding:35px 7px;
+    border:solid 2px #004F72;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius: 50px;
+    font:18px Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:#E5FFFF;
+    background-color:#3BA4C7;
+    background-image: -moz-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+    background-image: -webkit-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+    background-image: -o-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+    background-image: -ms-linear-gradient(top, #3BA4C7 0% ,#1982A5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1982A5', endColorstr='#1982A5',GradientType=0 );
+    background-image: linear-gradient(top, #3BA4C7 0% ,#1982A5 100%);
+    -webkit-box-shadow:5px 5px 1px #b09b9b, inset 0px 0px 1px #ffffff;
+    -moz-box-shadow: 5px 5px 1px #b09b9b,  inset 0px 0px 1px #ffffff;
+    box-shadow:5px 5px 1px #b09b9b, inset 0px 0px 1px #ffffff;
+    cursor: pointer;
+    text-shadow: 2px 2px gray;
+    /*text-shadow: -1px 0px 0px #bababa;*/
+    filter: dropshadow(color=#bababa, offx=-1, offy=0);
+}
+
+form button:disabled{
+    opacity: 0.5;
+    cursor:no-drop;
+}

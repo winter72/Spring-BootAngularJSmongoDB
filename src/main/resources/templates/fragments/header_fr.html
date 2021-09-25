@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <div th:fragment="header-css">
+        <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.4.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </div>
+</head>
+<body style="background-color: transparent">
+<div th:fragment="header_fr"  class="pt-4 sticky-top" ng-controller="headerCtrl">
+
+  <div  class="container  border border-primary  align-baseline sticky-top "  style="background-color: black;border-radius:10px;">
+    <!-- this is header -->
+    <ul class="nav nav-pills  justify-content-center" role="tablist">
+        <div id="menuToggle" ng-if="accessShow1" ng-click="showUserMenu()">
+            <input type="checkbox" />
+            <span id="span1"></span>
+            <span id="span2"></span>
+            <span id="span3"></span>
+        </div>
+        <li class="nav-item itempadd"  >
+            <a class="nav-link  font-weight-bold font-italic " data-toggle="pill" th:href="@{/}">Main<i class="fas fa-home" style="padding-left:5px;color: lightseagreen"></i></a>
+        </li>
+        <li class="nav-item itempadd"  >
+             <!--   <span ng-hide="yesViews" style="display: inline-block">-->
+          <a ng-hide="accessShow"  class="nav-link  font-weight-bold font-italic" data-toggle="pill"  href="#!{{info}}">Login<i class="fas fa-door-open" style="padding-left:5px;color: lightseagreen"></i></a>
+            <a  ng-show="accessShow" style="color: greenyellow" class="nav-link  font-weight-bold font-italic" data-toggle="pill"  ng-href="#!{{info}}">Account<i class="fas fa-eye" style="padding-left:5px;color:greenyellow"></i></a>
+              <!--  </span>
+            <span ng-show="yesViews" style="display: inline-block">
+            <a style="color: greenyellow" class="nav-link  font-weight-bold font-italic" data-toggle="pill"  href="#!user">Account<i class="fas fa-eye" style="padding-left:5px;color:greenyellow"></i></a>
+                </span>-->
+        </li>
+        <li class="nav-item itempadd" >
+            <a ng-if="!accessShow" class="nav-link  font-weight-bold font-italic" data-toggle="pill"  href="#!registry">Registration<i class="fas fa-eye" style="padding-left:5px;color: lightseagreen"></i></a>
+           <a ng-if="accessShow" style="color: red" class="nav-link  font-weight-bold font-italic" data-toggle="pill"  ng-click="exitUsers()" href="#!login/exit">Exit<i class="fas fa-door-open" style="padding-left:5px;color: red"></i></a>
+        </li>
+        <li class="nav-item itempadd" >
+            <a class="nav-link font-weight-bold font-italic" data-toggle="pill" href="#!themes">Themes<i class="fas fa-comment-dots" style="padding-left:5px;color: lightseagreen"></i></a>
+        </li>
+        <li class="nav-item itempadd" >
+           <span>
+               <form style="padding:5px">
+               <input type="text" name="search" placeholder="Search"/>
+                   <button type="submit" class="btn-sm btn-success text-center rounded-pill"><i class="fas fa-search" style="position: center;color:navy"></i></button>
+               </form>
+           </span>
+        </li>
+        <li class="nav-item itempadd"  > <a class="nav-link font-weight-bold font-italic" data-toggle="pill" id='localtime' style="color: #f1f1f1"></a></li>
+   </ul>
+</div>
+</div>
+</body>
+</html>

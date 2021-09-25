@@ -1,0 +1,32 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body> -->
+<div class="container text-center " >
+    <h3 style="font-weight: bold;color:darkcyan" >Update or add photo.</h3>
+    <form method="post" name="updateFoto" enctype="multipart/form-data" novalidate >
+        <div class="form-group row justify-content-center">
+            <div class="col-sm-12">
+                <input id="file" class="form-control" name="file" type="file"   ng-required="true">
+                <div class="disk" >
+                    <label for="file" style="cursor: pointer">
+                        <b>U</b>
+                        <b>р</b>
+                        <b>L</b>
+                        <b>o</b>
+                        <b>a</b>
+                        <b>d</b>
+                    </label>
+                <img src="{{fotolink.photolink}}" class="rounded-circle " id="images" style="background-color:whitesmoke;width:250px;height:250px;position:relative;">
+                </div>
+                <p style="visibility: hidden"> <input type="checkbox" ng-model="checkings" ng-value="checkings"/><strong>  Update photo</strong></p>
+            </div>
+            <button  type="submit" class="buttn" ng-disabled="!checkings" ng-click="updateImg()" >Update&nbsp;✔</button>
+        </div>
+    </form>
+</div>
+<!-- </body>
+</html> -->

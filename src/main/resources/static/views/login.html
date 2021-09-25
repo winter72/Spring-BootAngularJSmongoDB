@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Login</title>
+</head>
+<body >
+<div class="container text-center  pt-3"  id="logCont" ng-controller="loginCtrl" >
+  {{changeBackColor()}}
+    <div class="container text-center" >
+<h1>{{model.message}}</h1>
+    </div>
+    <div class="container" style="width: 40%" ng-if="showLogout">
+        <div class="alert alert-info" ng-if="showLogout">
+                        You have been logged out.
+         </div>
+    </div>
+    <div class="container" ng-controller="validateCtrl">
+        <form    name="formLogin"  th:method="post" novalidate>
+            <p style="color: darkgreen"><strong>User email:</strong>
+                <input type="email"  name="email" ng-model="user.email"  ng-required="true" ><br>
+                <span style="color:red" ng-show="formLogin.email.$invalid && formLogin.email.$dirty">
+                    <span ng-show="formLogin.email.$error.required"><strong>Email is required.</strong></span><br/>
+                     <span ng-show="formLogin.email.$error.email"><strong>Invalid email address.</strong></span>
+                </span>
+            </p>
+
+            <p style="color: darkgreen"><strong>Password:</strong>
+                <input type="password"  name="password" ng-model="user.password" ng-required="true" ><br>
+                <span style="color:red" ng-show="formLogin.password.$invalid && formLogin.password.$dirty">
+                    <span ng-show="formLogin.password.$error.required"><strong>Password is required.</strong></span>
+  </span>
+            </p>
+
+            <p>
+                <input type="checkbox" ng-model="myVar"><strong>  Remember me</strong>
+            </p>
+            <p style="color:red;font-weight: bold"><strong>{{CheckUser.getMsg()}}</strong></p>
+            <p>
+                <button type="submit" class="btn btn-success " ng-disabled="formLogin.email.$invalid||formLogin.email.$error.email||formLogin.password.$invalid" ng-click="CheckUser.createOrLoginOrRegistry(user)">Submit</button>
+              <!--  <input type="submit"  ng-disabled=" myForm.user.$invalid || myForm.password.$invalid"/>-->
+            </p>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

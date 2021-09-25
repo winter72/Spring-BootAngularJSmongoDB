@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="homeApp"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+   <!-- <base href="/"> -->
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Conference</title>
+   <div th:replace="fragments/header_fr :: header-css" />
+    <div th:replace="fragments/footer_fr :: footer-js"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header_css.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/userstyle.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/updatefotostyle.css}"/>
+
+  <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+</head>
+<body ng-cloak >
+<div id="startContainer1" class="container-fluid" ng-controller="mainCtrl">
+<header>
+<div  th:replace="fragments/header_fr :: header_fr" ></div>
+</header>
+<main>
+<div class=”container ”  ng-view style="height:80%"></div>
+</main>
+<footer>
+    <div th:replace="fragments/footer_fr :: footer_fr"></div>
+</footer>
+
+ </div>
+
+<script  type="text/javascript" th:src="@{/js/myscript.js}"></script>
+<script  type="text/javascript" th:src="@{/factories/constantsscript.js}"></script>
+<script  type="text/javascript" th:src="@{/factories/servicesscript.js}"></script>
+<script  type="text/javascript" th:src="@{/js/conferencedirective.js}"></script>
+<script  type="text/javascript" th:src="@{/factories/fabrica_or_service_for_user.js}"></script>
+<script  type="text/javascript" th:src="@{/all_directive/userupdatedirective.js}"></script>
+<script  type="text/javascript" th:src="@{/all_directive/userphotodirective.js}"></script>
+<script  type="text/javascript" th:src="@{/js/routesscript.js}"></script>
+<script  type="text/javascript" th:src="@{/factories/accessscript.js}"></script>
+<script  type="text/javascript" th:src="@{/js/headerscript.js}"></script>
+<script  type="text/javascript" th:src="@{/js/footerscript.js}"></script>
+<script  type="text/javascript" th:src="@{/js/loginscript.js}"></script>
+<script  type="text/javascript" th:src="@{/js/registryscript.js}"></script>
+<script  type="text/javascript" th:src="@{/js/themesscript.js}"></script>
+<script  type="text/javascript" th:src="@{/js/userscript.js}"></script>
+<script  type="text/javascript" th:src="@{/js/adminscript.js}"></script>
+
+</body>
+</html>

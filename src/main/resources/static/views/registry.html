@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Registry</title>
+</head>
+<body >
+<div class="container text-center pt-3">
+    {{changeBackColorR()}}
+<h1 >{{model.message}}</h1>
+    <div class="container">
+        <form   ng-controller="validetionCtrl" name="registryForm"  th:method="post" novalidate >
+<!--novalidate-->
+            <p style="color: darkgreen"><strong>Firstname:</strong>
+                <input type="text" name="name" ng-model="user.username" ng-required="true"/><br>
+                <span style="color:red" ng-show="registryForm.name.$invalid">
+                    <span ng-show="registryForm.name.$error.required"><strong>Username is required.</strong></span>
+                </span>
+            </p>
+            <p style="color: darkgreen"><strong>Surname:</strong>
+                <input type="text" name="surname" ng-model="user.surname" ng-required="true"/><br>
+                <span style="color:red" ng-show="registryForm.surname.$invalid">
+                    <span ng-show="registryForm.surname.$error.required"><strong>Surrname is required.</strong></span>
+                </span>
+            </p>
+            <p style="color: darkgreen"><strong>Email:</strong>
+                <input type="email" name="email" ng-model="user.email"  ng-required="true" /><br>
+                <span style="color:red" ng-show="registryForm.email.$invalid">
+                    <span ng-show="registryForm.email.$error.required"><strong>Email is required.</strong></span>
+                    <span ng-show="registryForm.email.$error.email"><strong>Invalid email address.</strong></span>
+               </span>
+            </p>
+            <label style="font-weight: bold">Password (must be between 5 and 15 characters, and contain <br>
+                at least one numeral and one alphabetic character)</label>
+            <p style="color: darkgreen"><strong>Password:</strong>
+                <input type="password" name="password" ng-model="user.password"  ng-required="true"/><br/>
+                <!--  ng-minlength="5" ng-maxlength="15" ng-pattern="/^.*(?=.*\d)(?=.*[a-zA-Z]).*$/" -->
+                <span style="color:red" ng-show="registryForm.password.$invalid">
+                    <span ng-show="registryForm.password.$error.required"><strong>Password is required.</strong></span>
+  </span>
+            </p>
+<p>
+    <input type="checkbox" ng-model="myVar"><strong>  I agree</strong>
+
+            <p style="color: darkgreen"><strong>{{AddUser.getMsg()}}</strong></p>
+            <p>
+                <button type="submit" class="btn btn-primary" ng-disabled="registryForm.$invalid ||!myVar" ng-click="AddUser.createOrLoginOrRegistry(user)">Registry</button>
+                <!--  <input type="submit"  ng-disabled=" myForm.user.$invalid || myForm.password.$invalid"/>-->
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+</body>
+</html>

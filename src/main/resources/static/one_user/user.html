@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>User</title>
+</head>
+<body >
+<div class="container-fluid text-center" ng-controller="userCtrl" style=" background-repeat: repeat-y;">
+    {{changeBackColorU()}}
+    <div class="container-fluid text-center" ng-hide="userBarMenu"> <h1>{{model.message}}</h1></div>
+    <div class="row " ng-show="userBarMenu" >
+        <div class="col-sm-3 w-25 sidebar ">
+            <div class="container">
+                <img ng-src="{{fotolink.photolink}}" id="images1" style="background-color:whitesmoke;border-radius: 10px;width:100px;height:100px">
+            </div>
+            <p  ng-click="yourChoose('Home')"><i class="fas fa-home"></i>Home<span ng-bind="finalchoose" style="visibility: hidden;width: 1px"></span></p>
+            <p  ng-click="yourChoose('Services')"><i class="fas fa-wrench"></i>Services<span ng-bind="finalchoose" style="visibility: hidden;width: 1px"></span></p>
+            <p  ng-click="yourChoose('Photo')"><i class="fas fa-user"></i>Photo<span ng-bind="finalchoose" style="visibility: hidden;width: 1px"></span></p>
+            <p  ng-click="yourChoose('Contact')"><i class="fas fa-envelope"></i>Contact<span ng-bind="finalchoose" style="visibility: hidden;width: 1px"></span></p>
+        </div>
+        <div class="col-sm-9  w-75 h-100" style="margin-left: 20%;margin-top:3%" ng-switch on="finalchoose">
+            <div class="container bg-light animate-switch"  update-directive="checkUser" ng-switch-when="Services"></div>
+            <div class="container bg-light animate-switch " update-photo="fotolink" ng-switch-when="Photo"></div>
+            <div class="container animate-switch" ng-switch-when="Contact">Contact</div>
+            <div class="container animate-switch" ng-switch-default>Home</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

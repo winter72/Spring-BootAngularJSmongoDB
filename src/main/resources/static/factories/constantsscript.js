@@ -1,0 +1,10 @@
+angular.module('homeApp')
+.constant("AUTH_EVENTS",{
+    notAuthenticated:"auth-not-authenticated"
+})
+.constant("API_ENDPOINT",{
+    urlLogin:"/api/v1/check_one",
+    urlUpdate:"/api/v1/update_user",
+    urlRegistry:'/api/v1/one_user',
+    urlFile:'/api/v1/user_file',
+});

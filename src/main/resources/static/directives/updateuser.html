@@ -1,0 +1,80 @@
+<!--<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Update User</title>
+</head>
+<body>
+<div class="row">-->
+  <div class="container text-center  " >
+      <h3 style="font-weight: bold;color: darkcyan" >Update Account.</h3>
+  <form method="put" name="updateForm"  ng-on-load="loadUpdateform()" novalidate >
+      <input type="hidden" ng-value="checkUser.id" ng-init="usr.id=checkUser.id" ng-model="usr.id"/>
+      <input type="hidden" ng-value="checkUser.role" ng-init="usr.role=checkUser.role" ng-model="usr.role"/>
+    <div class="form-row align-items-center">
+      <div class="col-sm-4">
+         <label class="mr-sm-2" style="font-weight: bold;color: black">Firstname</label>
+      </div>
+     <div class="col-sm-8">
+       <input type="text" style="font-weight: bold;color: black" class="form-control" name="name" ng-value="checkUser.firstname" ng-model="usr.firstname" ng-init="usr.firstname=checkUser.firstname" ng-required="true"/>
+     </div>
+    </div>
+          <br>
+          <div class="form-row align-items-center">
+                  <div class="col-sm-4">
+                          <label class="mr-sm-2" style="font-weight: bold;color: black">Surname</label>
+                  </div>
+                  <div class="col-sm-8">
+                          <input type="text"  class="form-control" style="font-weight: bold;color: black" name="surname" ng-value="checkUser.surname" ng-model="usr.surname" ng-init="usr.surname=checkUser.surname" ng-required="true"/>
+                  </div>
+          </div>
+          <br>
+    <div class="form-row align-items-center">
+      <div class="col-sm-4" >
+       <label  class="mr-sm-2" style="font-weight: bold;color: black">Email:</label>
+      </div>
+      <div class="col-sm-8" >
+       <input type="email" class="form-control" id="email"  name="email" style="font-weight: bold;color: black" ng-model="usr.email" ng-value="checkUser.email" ng-init="usr.email=checkUser.email" ng-required="true"/>
+      </div>
+    </div>
+          <br/>
+          <div class="form-row align-items-center" >
+                  <div class="col-sm-4">
+                          <label  class="mr-sm-2" style="font-weight: bold;color: black">Old Password:</label>
+                  </div>
+                  <div class="col-sm-8">
+                          <input  type="password" class="form-control" ng-keyup="opChange()" placeholder="Old password" name="oldpswd" style="font-weight: bold;color: black" ng-model="usr.oldpassword" ng-required="true"/>
+                  </div>
+          </div>
+          <br/>
+   <div class="form-row align-items-center" >
+      <div class="col-sm-4">
+        <label  class="mr-sm-2" style="font-weight: bold;color: black">New Password:</label>
+     </div>
+    <div class="col-sm-8">
+     <input  type="password" class="form-control" name="newpswd" ng-keyup="nKeyup()" style="font-weight: bold;color: black" placeholder="New password"   ng-model="usr.password"  />
+     </div>
+   </div>
+      <br/>
+          <div class="form-row align-items-center" >
+                  <div class="col-sm-4">
+                          <label  class="mr-sm-2" style="font-weight: bold;color: black">Repeat Password:</label>
+                  </div>
+                  <div class="col-sm-8">
+                          <input  type="password" class="form-control" ng-keyup="nKeyup()" name="repeatpswd" placeholder="Repeat new password" style="font-weight: bold;color: black" ng-model="usr.repeatpassword" />
+                  </div>
+             <input type="checkbox" ng-model="valids" ng-value="valids" ng-init="valids" style="visibility: hidden">
+          </div>
+          <br/>
+      <p ng-style="respStyle" >{{updateUser.getMsg()}}</p>
+          <p>
+              <button type="submit" class="buttn" ng-disabled="updateForm.$invalid || valids" ng-click="updateUser.updateUsers(usr)">Update&nbsp;✔</button>
+          </p>
+  </form>
+  </div>
+<!--</div>
+ </body>
+</html> -->

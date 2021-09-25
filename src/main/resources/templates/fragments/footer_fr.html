@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+   <div th:fragment="footer-js">
+        <script th:src="@{/webjars/jquery/3.4.1/dist/jquery.slim.min.js}" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8" crossorigin="anonymous"></script>
+                <!-- integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+       <script  type="text/javascript" th:src="@{/webjars/jquery/3.4.1/dist/jquery.min.js}"></script>
+        <script  type="text/javascript" th:src="@{/webjars/popper.js/1.14.3/esm/popper.min.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/bootstrap/4.4.1/js/bootstrap.min.js}"></script>
+        <script  th:src="@{/webjars/angularjs/1.7.7/angular.min.js}"></script>
+       <script  th:src="@{/webjars/angularjs/1.7.7/angular-animate.js}"></script>
+       <script  th:src="@{/webjars/angularjs/1.7.7/angular-route.js}"></script>
+       <script  th:src="@{/webjars/angularjs/1.7.7/angular-resource.js}"></script>
+    </div>
+</head>
+<body >
+<div th:fragment="footer_fr" class="container text-center" ng-controller="footerCtrl" ng-hide="footerShow">
+<p class=" text-danger">Footer</p>
+</div>
+
+</body>
+</html>
