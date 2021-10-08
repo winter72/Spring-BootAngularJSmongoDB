@@ -34,15 +34,16 @@ public class MongoConfig {
      return false;
  }
 
- public @Bean
- MongoDbFactory mongoDbFactory() throws Exception {
-     MongoClient mongoClient = new MongoClient("localhost", 27017);
+ @Bean
+ public MongoDbFactory mongoDbFactory() throws Exception {
+     MongoClient mongoClient =new MongoClient("localhost",27017);// new MongoClient("localhost",270
      MongoDatabase database = mongoClient.getDatabase("conferencemongo");
 
-     if (!findName(database, "users")) {
+    if (!findName(database,"users")) {
          try {
              database.createCollection("users");
          } catch (MongoCommandException e) {
+             System.out.println("Exist");
              e.getErrorMessage();
          }
      }
@@ -86,12 +87,12 @@ public class MongoConfig {
          collection.insertOne(document);
         // mongoClient.close();
      }
-     return new SimpleMongoDbFactory(mongoClient, "conferencemongo");
+     return new SimpleMongoDbFactory(mongoClient,"conferencemongo");
      //return new SimpleMongoDbFactory(new MongoClient("127.0.0.1"), "conferencemongo");
  }
 
-    public @Bean
-    MongoTemplate mongoTemplate() throws Exception {
+   @Bean
+   public MongoTemplate mongoTemplate() throws Exception {
 
         MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory());
         return mongoTemplate;
